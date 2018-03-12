@@ -1,0 +1,49 @@
+<body background="/public/assets/img/burger-background.jpg">
+<div class="container">
+        <div class="jumbotron bg-success">
+            <h1 class="text-center display-4"><strong>Make a burger, then Devour!</strong></h1>
+        </div>
+    </div>
+    {{!-- {{#each burgers}}
+    {{/each}} --}}
+
+    <div class="mx-auto col-md-8">
+        <div class="bg-warning card">
+            <div class="row">
+                <div class="col-sm-6" id="newBurger">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <div class="container">{{id}}. {{burger_name}}<button class="devour-button" data-id="{{id}}">Devour</button></div>
+                    {{/unless}}
+                    {{/each}}     
+               </div>
+                <div class="col-sm-6" id="devouredBurger">
+                     {{#each burgers}}
+                       {{#if devoured}}
+                       <div class="container">
+                           {{burger_name}}
+                       </div>
+                       {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        <form class="create-burger">
+            <div class="text-center card-body">
+                <div class="form-group">
+                    <!-- <img src="img/angry-burger.jpg"> -->
+                    <label for="exampleFormControlTextarea1">Enter the Burger You Would Like to Eat</label>
+                    <textarea class="form-control" id="input" rows="1"></textarea>
+                </div>
+            </div>
+            <div class="mx-auto form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>      
+</div>
+</body>
+{{!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> --}}
